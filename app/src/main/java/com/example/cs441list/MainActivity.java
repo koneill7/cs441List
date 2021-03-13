@@ -29,9 +29,7 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        //EditText edit = findViewById(R.id.user_input);
-        View view = this.getWindow().getDecorView();
-        final EditText[] userText = new EditText[1];
+
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
@@ -53,10 +51,16 @@ public class MainActivity extends AppCompatActivity {
 
     public void addRow(View view){
         //Context context;
+        EditText edit = findViewById(R.id.user_input);
+        //View view = this.getWindow().getDecorView();
+        final EditText[] userText = new EditText[1];
         TableRow tableRow;
         tableRow = new TableRow(this);
         TextView text = new TextView( this);
-        text.setText("new text view 1 | " + tableRowList.size());
+        String store = "Nothing entered.";
+        userText[0] = (EditText)findViewById(R.id.user_input);
+        store = userText[0].getText().toString();
+        text.setText(store);
         tableRow.addView(text, 0);
 
 
@@ -67,8 +71,10 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 table.removeView(tableRow);
                 tableRowList.remove(tableRow);
+
             }
         });
+
         tableRow.addView(button, 1);
         table.addView(tableRow);
         tableRowList.add(tableRow);

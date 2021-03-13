@@ -34,7 +34,8 @@
     <TableLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="200dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginLeft="10dp"
         android:stretchColumns="0,1"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -48,19 +49,35 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_column="0"
-                android:text="Add your to do items here:"/>
-
+                android:text="To Do"
+                android:textSize="25dp"
+                android:layout_marginLeft="150dp"
+                />
         </TableRow>
 
     </TableLayout>
+    <EditText
+        android:id="@+id/user_input"
+        android:layout_width="400dp"
+        android:layout_height="40dp"
+        android:background="#D3F0F2"
+        android:inputType="text"
+        android:layout_marginLeft="0dp"
+        android:layout_marginTop="680dp"
+        app:layout_constraintBottom_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+         />
+
     <Button
         android:id="@+id/addButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="120dp"
+        android:layout_height="40dp"
         android:onClick="addRow"
-        android:text="Add Row"
+        android:text="Add"
         android:layout_marginTop="600dp"
-        android:layout_marginLeft="300dp"
+        android:layout_marginLeft="270dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.948"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -71,10 +88,10 @@
 
     <Button
         android:id="@+id/removeButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="120dp"
+        android:layout_height="40dp"
         android:onClick="removeRow"
-        android:text="Remove Row"
+        android:text="Remove"
         android:layout_marginTop="600dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.948"
@@ -82,6 +99,19 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.945" />
+
+    <TextView
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:text="Type your to-do item here:"
+        android:textSize="15dp"
+        android:layout_marginTop="655dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.948"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.945"/>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
 

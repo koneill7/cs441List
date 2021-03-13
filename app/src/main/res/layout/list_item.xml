@@ -9,6 +9,7 @@
         android:layout_marginLeft="200dp">
         
         <TextView
+            android:id="@+id/clickViewed"
             android:layout_width="@+id/textView"
             android:layout_height="wrap_content"
             android:layout_marginLeft="200dp"

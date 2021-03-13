@@ -12,13 +12,31 @@ import android.view.View;
 
 import android.view.Menu;
 import android.view.MenuItem;
+import android.content.Context;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TableLayout;
+import android.widget.TableRow;
+import android.widget.TextView;
+
+import java.util.ArrayList;
+
 
 public class MainActivity extends AppCompatActivity {
 
+    private TableLayout table;
+    private ArrayList<TableRow> tableRowList;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        //EditText edit = findViewById(R.id.user_input);
+        View view = this.getWindow().getDecorView();
+        final EditText[] userText = new EditText[1];
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        tableRowList = new ArrayList<>();
+        table = (TableLayout) findViewById(R.id.table_layout);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -30,6 +48,35 @@ public class MainActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
+
+    }
+
+    public void addRow(View view){
+        //Context context;
+        TableRow tableRow;
+        tableRow = new TableRow(this);
+        TextView text = new TextView( this);
+        text.setText("new text view 1 | " + tableRowList.size());
+        tableRow.addView(text, 0);
+
+
+        Button button = new Button(this);
+        button.setText("X");
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                table.removeView(tableRow);
+                tableRowList.remove(tableRow);
+            }
+        });
+        tableRow.addView(button, 1);
+        table.addView(tableRow);
+        tableRowList.add(tableRow);
+
+    }
+    public void removeRow(View view){
+        TableRow row = tableRowList.remove(0);
+        table.removeView(row);
     }
 
     @Override
